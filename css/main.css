@@ -1,0 +1,453 @@
+/**
+* Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+* http://cssreset.com
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+
+
+/*This is where my styling starts*/
+
+body {
+    background: #ff3300;
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Economica', sans-serif;
+    /*font-family: 'Slabo 13px', serif;*/
+    color: #FFFF99;
+    font-size: 1.25em;
+}
+
+.new-game {
+    overflow: visible;
+}
+
+.new-game__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+@-webkit-keyframes fadeIt {
+    0%   { background-color: #ff3300; }
+    50%  { background-color: #ff5e00; }
+    100% { background-color: #ff3300; }
+}
+@-moz-keyframes fadeIt {
+    0%   { background-color: #ff3300; }
+    50%  { background-color: #ff5e00; }
+    100% { background-color: #ff3300; }
+}
+@-o-keyframes fadeIt {
+    0%   { background-color: #ff3300; }
+    50%  { background-color: #ff5e00; }
+    100% { background-color: #ff3300; }
+}
+@keyframes fadeIt {
+    0%   { background-color: #ff3300; }
+    50%  { background-color: #ff5e00; }
+    100% { background-color: #ff3300; }
+}
+
+.backgroundAnimated {
+    background-image: none;
+    -webkit-animation: fadeIt 5s infinite ease-in-out;
+    -moz-animation: fadeIt 5s infinite ease-in-out;
+    -o-animation: fadeIt 5s infinite ease-in-out;
+    animation: fadeIt 5s infinite ease-in-out;
+}
+
+.new-game__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    overflow: visible;
+    width: 40%;
+}
+
+.new-game__btn,
+.score__points {
+    animation-name: pulse;
+    -webkit-animation-name: pulse;
+
+    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(0.95);
+        opacity: 0.7;
+    }
+    50% {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(0.95);
+        opacity: 0.7;
+    }
+}
+
+.game {
+    overflow: auto;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 3em;
+}
+
+.header {
+    text-align: center;
+    padding-top: 3.5em;
+}
+
+h1 {
+    margin: auto;
+    font-size: 4.5em;
+    padding-bottom: .5em;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Slabo 13px', serif;
+    font-size: 1.5em;
+    padding-bottom: 2em;
+}
+
+.icon--fire {
+    position: relative;
+}
+
+.icon--fire:before {
+    content: "l";
+    font-family: "match-pix";
+    font-size: .6em;
+    position: absolute;
+    top: -.45em;
+    left: -.38em;
+    animation-name: pulse;
+    -webkit-animation-name: pulse;
+    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(0.95);
+        opacity: 0.7;
+    }
+    50% {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(0.95);
+        opacity: 0.7;
+    }
+}
+
+.btn {
+    display: block;
+    padding: 5%;
+    border: 5px solid #FFFF99;
+    border-radius: .1em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    color: #FFFF99;
+    text-decoration: none;
+    font-size: 1.25em;
+    width: 60%;
+    margin: 1em auto;
+}
+
+.easy {
+    transform: perspective(12em) rotateY(-12deg);
+}
+
+.easy:hover {
+    background: #FFFF99;
+    color: #ff3300;
+}
+
+.hard {
+    transform: perspective(12em) rotateY(12deg);
+}
+
+.hard:hover {
+    background: #FFFF99;
+    color: #ff3300;
+}
+
+.game-info {
+    overflow: auto;
+    min-width: 100%;
+    padding-bottom: 3em;
+}
+
+.score {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+
+.score__points {
+    display: inline-block;
+    padding: .15em;
+    font-family: "match-pix";
+}
+
+.time {
+    float: right;
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+    /*font-family: 'Slabo 13px', serif;*/
+    font-size: 1.3em;
+}
+
+.board {
+   text-align: justify;
+}
+
+.board :after {
+    content: "";
+    display: inline-block;
+}
+
+.card {
+    float: left;
+    position: relative;
+    display: inline-block;
+    width: 16.66%;
+    height: 0;
+    font-size: 2em;
+    vertical-align: top;
+    overflow: visible;
+    padding-bottom: 16.66%;
+    height: 0;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card :before {
+   content: " ";
+   width: 0;
+   padding-top: 100%;
+   z-index: 1000;
+}
+
+.card--flip {
+    opacity: 0;
+}
+
+.card--flip:checked + .card--front {
+    z-index: 1000;
+    webkit-transform: rotateY( 0deg );
+    -moz-transform: rotateY( 0deg );
+    -o-transform: rotateY( 0deg );
+    transform: rotateY( 0deg );
+    transform: rotateY( 0deg );
+    transition: all 0.3s linear;
+    transform-style: preserve-3d;
+    animation-iteration-count: 1;
+}
+
+.card--flip:checked + .card--back:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-family: "match-pix";
+    color: #ff3300;
+    font-size: 1em;
+    height: 1em;
+    -webkit-transition-delay: 2s; /* Safari */
+    transition-delay: .3s;
+}
+
+.card--flip:checked + .icon--shop:after {
+    content: "s";
+}
+
+.card--flip:checked + .icon--tv:after {
+    content: "q";
+}
+
+.card--flip:checked + .icon--lab:after {
+    content: "o";
+}
+
+.card--flip:checked + .icon--cup:after {
+    content: "w";
+}
+
+.card--flip:checked + .icon--banknote:after {
+    content: "v";
+}
+
+.card--flip:checked + .icon--truck:after {
+    content: "r";
+}
+
+.card--flip:checked + .icon--food:after {
+    content: "m";
+}
+
+.card--flip:checked + .icon--star:after {
+    content: "b";
+}
+
+.card--flip:checked + .icon--diamond:after {
+    content: "t";
+}
+
+.card--flip:not(:checked) ~ .card--back {
+    z-index: 900;
+    webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+    transition: all 0.2s linear;
+    transform-style: preserve-3d;
+
+}
+
+.card--front {
+    display: block;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    border-radius: 3%;
+    background-color: #FFFF99;
+}
+
+.card--back {
+    display: block;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    border-radius: 3%;
+    background-color: #FFFF99;
+    overflow: auto;
+    webkit-transform: rotateY( 0deg );
+    -moz-transform: rotateY( 0deg );
+    -o-transform: rotateY( 0deg );
+    transform: rotateY( 0deg );
+    transform: rotateY( 0deg);
+    transition: all 0.5s linear;
+    transform-style: preserve-3d;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 768px) {
+    .card {
+        width: 33.33%;
+        padding-bottom: 33.33%;
+    }
+
+    .score {
+        display: block;
+        width: 100%;
+    }
+
+    .time {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin-top: 2em;
+    }
+
+}
